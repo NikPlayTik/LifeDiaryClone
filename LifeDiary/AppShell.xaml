@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="LifeDiary.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pageprogram="clr-namespace:LifeDiary.PageProgram"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
+    
+    <TabBar >
+        <Tab Title="Главное" Icon="Images/home.png">
+            <ShellContent ContentTemplate="{DataTemplate pageprogram:MainPage}" />
+        </Tab>
+        <Tab Title="Статистика" Icon="stats.png">
+            <ShellContent ContentTemplate="{DataTemplate pageprogram:StatsPage}" />
+        </Tab>
+        <Tab Title="Профиль" Icon="user.png">
+            <ShellContent ContentTemplate="{DataTemplate pageprogram:ProfilePage}" />
+        </Tab>
+    </TabBar>
+
+</Shell>

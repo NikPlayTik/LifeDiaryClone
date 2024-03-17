@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LifeDiary.PageProgram.MainPage"
+             BackgroundColor="#0F1924">
+
+    <ScrollView>
+        <StackLayout Spacing="10">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="120" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Запись -->
+                <Frame Grid.Row="0" Grid.Column="0"  BackgroundColor="#1F1277" Padding="15" CornerRadius="30" Margin="20, 25, 25, 0">
+                    <StackLayout>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="60"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label x:Name="LastEntryDate" Grid.Row="0" Grid.Column="0" Text="Дата/время" FontAttributes="Bold" FontSize="15" TextColor="#FF8F62" Margin="0, 0, 0, 0" VerticalOptions="Center"/>
+                            <Button x:Name="ButtonEntries" Grid.Row="0" Grid.Column="1" Text="Записи" TextColor="White" FontAttributes="Bold"  FontSize="20" BackgroundColor="#6D7FBB" CornerRadius="35" Padding="0, 0, 0, 0" VerticalOptions="Start" HeightRequest="60" Clicked="OnButtonEntriesClicked"/>
+
+                        </Grid>
+                        <Label x:Name="LastEntryDescription" Text="Описание к записи" TextColor="White" FontAttributes="Bold" FontSize="22" Margin="0, 10, 0, 0"/>
+                    </StackLayout>
+                </Frame>
+
+                <!-- Медиа -->
+                <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#1F1277" Padding="10, 15" CornerRadius="30" Margin="0, 25, 20, 0">
+                    <StackLayout>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Button x:Name="ButtonMedia" Grid.Row="0" Grid.Column="0" Text="Медиа" TextColor="White" FontAttributes="Bold" FontSize="20" BackgroundColor="#6D7FBB" CornerRadius="35" Padding="0, 0, 0, 0" VerticalOptions="Start" HeightRequest="60" Clicked="OnButtonMediaClicked"/>
+
+                        </Grid>
+                        <Image Margin="0, 10, 0, 0"/>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+
+            <!-- Цель -->
+            <Frame BackgroundColor="#1F1277" Padding="15" CornerRadius="30" Margin="20, 25, 20, 0">
+                <StackLayout>
+                    <!-- Дедлайн и подложка -->
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Row="0" Grid.Column="0" Padding="0,10,0,0">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Label x:Name="LastGoalDate" Text="Дедлайн" Grid.Row="0" FontAttributes="Bold" FontSize="16" TextColor="#FF8F62" Margin="0, 0, 20, 0"/>
+                            <Label x:Name="DaysLeftLabel" Text="Осталось:  дней" Grid.Row="1" FontAttributes="Bold" FontSize="14" TextColor="#FF8F62" Margin="0,0,0,10"/>                            
+                        </Grid>
+
+                        <StackLayout Grid.Row="0" Grid.Column="1">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions >
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Button  x:Name="ButtonGoals"  BackgroundColor="#6D7FBB" CornerRadius="35" Padding="0, 0, 0, 0" VerticalOptions="Start" HeightRequest="60" Clicked="OnButtonGoalsClicked"/>
+                                <Ellipse x:Name="LastGoalEllipse" Grid.Row="0"  WidthRequest="35" HeightRequest="35" Fill="#5AFD57" HorizontalOptions="End" Margin="0,0,15,0"/>
+                            </Grid>                  
+                        </StackLayout>
+
+                    </Grid>
+
+                    <Label x:Name="LastGoalDescription" Text="Краткое описание к цели. Пум-пум-пум. Сложно" TextColor="White" FontAttributes="Bold" FontSize="22" Margin="0, 10, 0, 0"/>
+
+                    <!-- Прогресс -->
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <ProgressBar x:Name="LastGoalProgress" Grid.Row="0" Grid.Column="0" Progress="0.75" BackgroundColor="Transparent" HeightRequest="12" Margin="0, 10, 0, 0"/>
+                        <Label x:Name="LastGoalProgressPercent" Grid.Row="1" Grid.Column="0" Text="Прогресс: 75%" TextColor="White" FontAttributes="Bold" FontSize="22" Margin="0, 0, 0, 0" HorizontalOptions="EndAndExpand"/>
+                    </Grid>
+                </StackLayout>
+            </Frame>
+
+            <!-- Достижение -->
+            <Frame BackgroundColor="#1F1277" Padding="20" CornerRadius="30" Margin="20, 25, 20, 0">
+                <StackLayout>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label x:Name="AchievementDateLabel" Text="Время получения" FontAttributes="Bold" FontSize="17" TextColor="#FF8F62" Margin="0, 0, 20, 0"/>
+                        <Button x:Name="ButtonAchievements" Grid.Row="0" Grid.Column="1" Text="Достижения" TextColor="White" FontAttributes="Bold" FontSize="20" BackgroundColor="#6D7FBB" CornerRadius="35" Padding="0, 0, 0, 0" VerticalOptions="Start" HeightRequest="60" Clicked="OnButtonAchievementsClicked"/>
+                    </Grid>
+
+                    <Label x:Name="AchievementDescriptionLabel" Text="Краткое описание достижения. Получил золотой кубок мира на чемпионате по футболу..." TextColor="White" FontAttributes="Bold" FontSize="22" Margin="0, 10, 0, 0"/>
+                </StackLayout>
+            </Frame>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

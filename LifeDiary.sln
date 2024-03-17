@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34701.34
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LifeDiary", "LifeDiary\LifeDiary.csproj", "{FFD99817-4039-44C0-9654-9F2C3F16599C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFD99817-4039-44C0-9654-9F2C3F16599C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFD99817-4039-44C0-9654-9F2C3F16599C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFD99817-4039-44C0-9654-9F2C3F16599C}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{FFD99817-4039-44C0-9654-9F2C3F16599C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFD99817-4039-44C0-9654-9F2C3F16599C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFD99817-4039-44C0-9654-9F2C3F16599C}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {355E1E7A-A0A5-4E95-B2B0-867D3A5D11B1}
+	EndGlobalSection
+EndGlobal

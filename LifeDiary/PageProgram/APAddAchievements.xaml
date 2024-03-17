@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LifeDiary.PageProgram.APAddAchievements"
+             BackgroundColor="#0F1924">
+
+    <ScrollView>
+        <StackLayout>
+            <Grid Margin="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="0.3*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Row="0" Grid.Column="0" Text="←    Назад" TextColor="White" FontAttributes="Bold" FontSize="22" BackgroundColor="Transparent" CornerRadius="30" Padding="10, 5, 10, 5" HorizontalOptions="StartAndExpand" Clicked="OnButtonTransitionMainPage"/>
+
+            </Grid>
+
+            <!-- Достижение -->
+            <StackLayout Margin="10">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Frame Grid.Row="0" Grid.Column="0"  BackgroundColor="#1F1277" Padding="15" CornerRadius="30">
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <DatePicker Grid.Row="0" Grid.Column="0" Date="{Binding Date}" FontAttributes="Bold" FontSize="22" TextColor="#FF8F62" VerticalOptions="Center"/>
+                                
+                            </Grid>
+
+                            <Frame Grid.Row="0" Grid.Column="1" BackgroundColor="#6D7FBB" CornerRadius="15" Margin="0, 25, 0, 0" Padding="10, 5, 10, 0" HeightRequest="400">
+                                <Editor Text="{Binding Description}" TextColor="White" BackgroundColor="Transparent" FontAttributes="Bold" FontSize="22" Margin="0, 10, 0, 0" Placeholder="Запишите описание тут..." PlaceholderColor="#98e38d"/>
+                            </Frame>
+                            <Button Text="Сохранить" BackgroundColor="#6D7FBB" TextColor="White" FontAttributes="Bold" FontSize="20" CornerRadius="30" Margin="0, 30, 0, 10" Clicked="Save_Clicked"/>
+                        </StackLayout>
+                    </Frame>
+                </Grid>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

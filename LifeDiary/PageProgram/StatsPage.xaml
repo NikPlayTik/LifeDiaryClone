@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LifeDiary.PageProgram.StatsPage"
+             xmlns:micro="clr-namespace:Microcharts.Maui;assembly=Microcharts.Maui"
+             BackgroundColor="#0F1924">
+
+    <ScrollView>
+        <StackLayout Spacing="10">
+            <!-- ЗАПИСИ -->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Статистика записей -->
+                <Frame Grid.Row="0" Grid.Column="0"  BackgroundColor="#1F1277" Padding="15" CornerRadius="30" Margin="20, 25, 25, 0">
+                    <StackLayout>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="0" Text="Записи" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" FontSize="25" />
+                            
+                        </Grid>
+                        <!-- Заголовок 1-й диаграммы -->
+                        <Label Text="Записи по месяцам" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" FontSize="20" Margin="0, 10, 0, 0"/>
+                        <!-- Диаграмма 1 -->
+                        <micro:ChartView x:Name="BarChartView" HeightRequest="200" Margin="0, 30, 0, 50" />
+                        <!-- Заголовок 2-й диаграммы -->
+                        <Label Text="Записи за дни недели" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" FontSize="20" />
+                        <!-- Диаграмма 2 -->
+                        <micro:ChartView x:Name="ActivityChartView" HeightRequest="250" Margin="0, 10, 0, 10"/>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+
+            <!-- ЦЕЛИ -->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Статистика целей -->
+                <Frame Grid.Row="0" Grid.Column="0"  BackgroundColor="#1F1277" Padding="15" CornerRadius="30" Margin="20, 25, 25, 0">
+                    <StackLayout>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="Цели" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" FontSize="25" />
+                            
+                        </Grid>
+                        <!-- Заголовок 1-й диаграммы -->
+                        <Label Text="Цели по месяцам" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" FontSize="20" Margin="0, 10, 0, 0"/>
+                        <!-- Диаграмма 1 -->
+                        <micro:ChartView x:Name="GoalsChartView" HeightRequest="300" Margin="0, 30, 0, 50"/>
+                        
+                        
+                        
+                        <!-- Заголовок 2.1-й диаграммы -->
+                        <Label Text="Кол-во целей (запланировано)" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" FontSize="19" Margin="0, 10, 0, 0"/>
+                        <!-- Диаграмма 2.1 -->
+                        <micro:ChartView x:Name="GoalsChartViewPlanned" HeightRequest="300" Margin="0, 30, 0, 50"/>
+                        
+                        <!-- Заголовок 2.2-й диаграммы -->
+                        <Label Text="Кол-во целей (выполнено)" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" FontSize="20" Margin="0, 10, 0, 0"/>
+                        <!-- Диаграмма 2.2 -->
+                        <micro:ChartView x:Name="GoalsChartViewAchieved" HeightRequest="300" Margin="0, 30, 0, 50"/>
+
+
+
+                        <!-- Заголовок 3-й диаграммы -->
+                        <Label Text="Цели по проценту выполнения" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" FontSize="18" Margin="0, 10, 0, 0"/>
+                        <!-- Диаграмма 3 -->
+                        <micro:ChartView x:Name="ProgressGoalsChartView" HeightRequest="200" Margin="0, 30, 0, 50"/>
+                    </StackLayout>
+                </Frame>
+            </Grid>
+
+            <!-- ДОСТИЖЕНИЯ -->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Статистика достижеий -->
+                <Frame x:Name="FrameAchievements" Grid.Row="0" Grid.Column="0"  BackgroundColor="#1F1277" Padding="15" CornerRadius="30" Margin="20, 25, 25, 0">
+                    <StackLayout>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Text="Достижения" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" FontSize="25" />
+
+                        </Grid>
+                                              
+                        <!-- Заголовок 1-й диаграммы -->
+                        <Label Text="Достижения по месяцам" TextColor="White" FontAttributes="Bold" HorizontalOptions="Center" FontSize="20" Margin="0, 10, 0, 0"/>
+                                                
+                        <Label x:Name="NoDataLabel" Text="Нет данных для отрисовки статистики" IsVisible="False" VerticalOptions="Center" FontAttributes="Bold" TextColor="Red" FontSize="25" Margin="10,20,10,20"/>
+                        
+                        <!-- Диаграмма 1 -->
+                        <micro:ChartView x:Name="AchievementsChartView" HeightRequest="200" Margin="0, 30, 0, 50"/>
+                        <!-- Заголовок 2-й диаграммы -->
+                        <Label Text="Связанные достижения по месяцам" TextColor="White" FontAttributes="Bold" HorizontalTextAlignment="Center" FontSize="20" Margin="0, 10, 0, 0"/>
+                        <!-- Диаграмма 2 -->
+                        <micro:ChartView x:Name="YourSecondChartView" HeightRequest="200" Margin="0, 30, 0, 50"/>
+                        
+                    </StackLayout>
+                </Frame>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
