@@ -5,9 +5,9 @@
              xmlns:mct="clr-namespace:CommunityToolkit.Maui.Behaviors;assembly=CommunityToolkit.Maui"
              BackgroundColor="#0F1924">
 
-    <Page.Behaviors>
+    <!--<Page.Behaviors>
         <mct:StatusBarBehavior StatusBarStyle="LightContent" />
-    </Page.Behaviors>
+    </Page.Behaviors>-->
 
     <ScrollView>
         <StackLayout Spacing="10">
